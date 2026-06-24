@@ -1,0 +1,74 @@
+---------------- useContext refactoring notes ----------------
+
+
+
+
+    <ShopContext value={{ cartItems, products, addToCart }}>
+      <Header />
+      <ProductDetail />
+    </ShopContext>
+
+
+
+
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+questions:
+
+    - In memcard we passed catsArr as a prop to the component in the returns jsx of App and could do this because the Ap
+
+
+
+- 3 pages
+
+    - home page
+
+        - w/e you want; a few images or info etc.; doesn't have to be fancy; is to test concepts thusfar
+
+    - shop page
+
+        - individual card elements for each of your products
+
+        - display an input field on it, letting user manually type in how many items to buy
+
+            - increment and decrement button next to it for fine tuning
+
+        - title for each product
+
+        - add to cart button
+
+    - cart page
+
+        - if items in your cart, cart page link in navbar should indicate num of items in cart
+
+            - should update in real time as user adds or removes items
+
+        - on this page display items and their quantities, allow user to + or - the quant of items or remove if appropriate
+
+        - don't need checkout / payment system 
+
+    * user can nav between them with a nav bar (shown on all pages)
+
+    * fetch shop items from https://fakestoreapi.com/
+
+    * clear any missing in props validation errors
+
+    * test thoroughly using react testing library (don't test react-router directly)
+
+    * style to show off
+
+    * deploy
