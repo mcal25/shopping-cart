@@ -1,27 +1,20 @@
----------------- useContext refactoring notes ----------------
+focus:
+
+    - add to cart button functionality on shop.jsx
+
+        - make a func
+
+            - on click calls func
+
+                - func does this
+
+                    - finds item in products context array that matches what you clicked and pushes that to the cart context arr
+
+                    - number on cart symbol should change as well 
 
 
 
-
-    <ShopContext value={{ cartItems, products, addToCart }}>
-      <Header />
-      <ProductDetail />
-    </ShopContext>
-
-
-
-
----------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
+    - entirety of cart.jsx
 
 
 
