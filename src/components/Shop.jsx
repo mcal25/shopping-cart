@@ -2,25 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from "react-router";
 import styles from './Shop.module.css'
 import { StoreContext } from '../StoreContext';
+import { ShopItem } from './ShopItem';
 
 
 const Shop = () => {
 
-    const { products, addToCart } = useContext(StoreContext);
+    const { products, addToCart, cartItems } = useContext(StoreContext);
+
+
 
     return (
         <>
             <h1>It's ya boy, da shop.</h1>
             <div className={styles.shopItemsContainer}>
-                {products.map(item => (
-                    <div className={styles.shopItem} key={item.id}>
-                        <p>{item.title}</p>
-                        <img className={styles.shopItemImage} src={item.image} alt="give us your money" />
-                        <p>$3.50</p>
-                        <input className={styles.shopItemInput} placeholder="0" type="number"/>
-                        <button className={styles.addToCartBtn} onClick={(e) => addToCart(item.id, e.target.previousElementSibling.value)}>Add to cart</button>
-                    </div>
-                ))}
+                {products.map(item => {
+                    return <ShopItem item={item} key={item.id}/>
+                })}
             </div>
             <Link to='/'><button>Go home?</button></Link>
         </>

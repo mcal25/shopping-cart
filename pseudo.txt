@@ -1,20 +1,8 @@
 focus:
 
-    - add to cart button functionality on shop.jsx
+    - cart icon updates with quantity of items in cart
 
-        - make a func
-
-            - on click calls func
-
-                - func does this
-
-                    - finds item in products context array that matches what you clicked and pushes that to the cart context arr
-
-                    - number on cart symbol should change as well 
-
-
-
-    - entirety of cart.jsx
+    - should be able to adjust quantity on cart page and remove items completely
 
 
 

@@ -153,3 +153,53 @@
     outline: 2px dashed #000000;
     outline-offset: 3px;
 }
+
+.removeBtn {
+    width: fit-content;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    /* Padding for snug fit around text */
+    padding: 8px 12px;
+    margin-top: auto;
+    align-self: center;
+
+    /* Neo-Brutalist Colors & Borders */
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+
+    /* Creates the 3D blocky layer effect baseline */
+    box-shadow: 3px 3px 0px #000000;
+    transform: translate(-3px, -3px);
+    transition: all 0.1s ease;
+}
+
+/* Hover state: Makes the button pop out slightly more */
+.removeBtn:hover {
+    background-color: #ff5252;
+    box-shadow: 4px 4px 0px #000000;
+    transform: translate(-4px, -4px);
+}
+
+/* Active state: The "Physical Click" animation */
+.removeBtn:active {
+    box-shadow: 0px 0px 0px #000000;
+    transform: translate(0px, 0px);
+}
+
+/* Clean focus state for accessibility */
+.removeBtn:focus-visible {
+    outline: 2px dashed #ffffff;
+    outline-offset: 3px;
+}
+
+label {
+    margin: 0 0 8px 0;
+}

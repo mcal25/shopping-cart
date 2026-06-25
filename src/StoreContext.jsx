@@ -3,6 +3,7 @@ import { useState, createContext, useEffect } from 'react';
 export const StoreContext = createContext({
     products: [],
     cartItems: [],
+    setCartItems: () => { },
     addToCart: () => { },
 });
 
@@ -28,21 +29,25 @@ export function StoreContextProvider({ children }) {
         console.log('ID OF THE PRODUCT', productId);
         const foundProduct = products.find((item) => item.id === productId);
         const productWithCount = { ...foundProduct, count: Number(itemCount) }
-        if (cartItems.find((item) => item.id == productId)) {
-            let targetIndex = cartItems.findIndex((thing) => thing.id == productId)
-            setCartItems(cartItems.splice(targetIndex, 1))
-        }
-        if (productWithCount) {
+        
+        const itemExists = cartItems.some((item) => item.id === productId);
+        
+        if (itemExists) {
+            setCartItems(cartItems.map((item) => 
+                item.id === productId ? productWithCount : item
+            ))
+        } else {
             setCartItems([...cartItems, productWithCount])
         }
     }
-
+    
     console.log('cartItems AFTER', cartItems);
 
     const contextValue = {
         products,
         cartItems,
         addToCart,
+        setCartItems,
     };
 
     return (
