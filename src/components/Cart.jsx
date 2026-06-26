@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router";
 import { StoreContext } from "../StoreContext";
 import styles from './Cart.module.css';
@@ -42,7 +42,6 @@ const Cart = () => {
             </div>
             <h2>Total Items: {calculateTotal()}</h2>
             <h2>Total Cost: {calculateTotalCost()} </h2>
-            <Link to='/'><button>Go home?</button></Link>
         </>
     );
 }

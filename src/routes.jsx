@@ -3,7 +3,6 @@ import { Cart } from './components/Cart';
 import { Shop } from './components/Shop';
 import { NiceLayout } from './NiceLayout';
 
-
 const routes = [
     {
         element: <NiceLayout />,
@@ -24,6 +23,5 @@ const routes = [
     },
 
 ];
-
 
 export default routes

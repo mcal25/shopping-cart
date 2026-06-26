@@ -21,13 +21,14 @@ const Navbar = () => {
         <>
             <div className={styles.navbar}>
                 <ul>
-                    <Link to='/'><li>Home</li></Link>
-                    <Link to='shop'><li>Shop</li></Link>
-                    <Link to='cart'><li className={styles.cartListItem}>
-                        <p>Cart</p>
-                        <ShoppingCart size={32} strokeWidth={2.5} style={{ marginRight: '8px' }} />
-                        <span>{calculateTotal()}</span>
-                    </li></Link>
+                    <div>
+                        <Link to='/'><li>Home</li></Link>
+                        <Link to='shop'><li>Shop</li></Link>
+                        <Link to='cart'><li className={styles.cartListItem}>
+                            <ShoppingCart size={32} strokeWidth={2.5} style={{ marginRight: '8px' }} />
+                            <span>{calculateTotal()}</span>
+                        </li></Link>
+                    </div>
                 </ul>
             </div>
         </>

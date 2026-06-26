@@ -1,30 +1,65 @@
 .shopItemsContainer {
     display: flex;
     flex-wrap: wrap;
+    background: linear-gradient(180deg, #3a2820 0%, #2a1810 100%);
+    padding: 20px;
+    min-height: 50vh;
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 3px solid #8b5a00;
 }
 
 .shopItem {
-    width: 250px;
-    height: 400px;
-    background-color: rgb(131, 153, 183);
-    border: 5px solid black;
-    margin: 10px;
-    padding: 8px;
+    width: 220px;
+    height: 280px;
+    background: linear-gradient(135deg, #b8956a 0%, #9d7d5a 100%);
+    border: 4px solid #5a3a20;
+    margin: 8px;
+    padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 0 rgba(212, 140, 55, 0.2),
+                0 0 20px rgba(212, 140, 55, 0.15);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.shopItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212, 140, 55, 0.5), transparent);
+}
+
+.shopItem:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 
+                inset 0 1px 0 rgba(212, 140, 55, 0.3),
+                0 0 28px rgba(212, 140, 55, 0.25);
 }
 
 .shopItem p {
-    margin: 0 0 8px 0;
-    font-size: 20px;
+    margin: 0 0 4px 0;
+    font-size: 14px;
     line-height: 1.3;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     flex-shrink: 0;
+    color: #2a1810;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
 
@@ -36,48 +71,40 @@
     flex-grow: 1;
     flex-shrink: 1;
     object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .shopItemInput {
     width: 100%;
     box-sizing: border-box;
     font-family: inherit;
-    /* Inherits the clean system font from your body */
     font-size: 13px;
     font-weight: 600;
 
-    /* Spacing */
-    padding: 6px 8px;
+    padding: 8px 10px;
     margin-bottom: 10px;
-    /* Pushes the $3.50 price down cleanly */
 
-    /* Neo-Brutalist Styling */
-    background-color: #f8f9fa;
-    color: #000000;
-    border: 3px solid #000000;
+    background: linear-gradient(135deg, #f5e6d3 0%, #f9ead8 100%);
+    color: #3a2820;
+    border: 2px solid #8b5a00;
     border-radius: 4px;
-    /* Subtle roundness to look premium, but still blocky */
 
-    /* Smooth interactive feedback */
     cursor: text;
     transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* The Magic: Creates a crisp, layered 3D pop effect when clicked */
+/* Khajit-inspired focus state */
 .shopItemInput:focus {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #fef5e7 0%, #fff9f0 100%);
     outline: none;
 
-    /* Physically moves the input up slightly... */
     transform: translate(-2px, -2px);
 
-    /* ...and casts a hard, retro black shadow underneath it */
-    box-shadow: 3px 3px 0px #000000;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3), inset 0 0 8px rgba(212, 140, 55, 0.2);
 }
 
-/* Subtle styling if you decide to use a placeholder (e.g., placeholder="Qty") */
 .shopItemInput::placeholder {
-    color: #8a8a8a;
+    color: #a0826d;
     font-weight: 400;
 }
 
@@ -94,13 +121,18 @@
     padding: 8px 12px;
     margin-top: auto;
 
-    background-color: #6a6ae254;
-    color: #000000;
-    border: 3px solid #000000;
+    background: linear-gradient(135deg, #d4a035 0%, #e6b844 50%, #d4a035 100%);
+    color: #2a1810;
+    border: 2px solid #8b5a00;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
 
-    
+.cartQuantityText:hover {
+    background: linear-gradient(135deg, #e6b844 0%, #f0c855 50%, #e6b844 100%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -114,43 +146,35 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 
-    /* Spacing */
-    padding: 8px 12px;
+    padding: 10px 12px;
     margin-top: auto;
-    /* Pushes the button to the absolute bottom of the card */
 
-    /* Neo-Brutalist Colors & Borders */
-    background-color: #6a6ae254;
-    /* Bright, attention-grabbing yellow */
-    color: #000000;
-    border: 3px solid #000000;
+    background: linear-gradient(135deg, #d4a035 0%, #e6b844 50%, #d4a035 100%);
+    color: #2a1810;
+    border: 2px solid #8b5a00;
     border-radius: 4px;
     cursor: pointer;
 
-    /* Creates the 3D blocky layer effect baseline */
-    box-shadow: 3px 3px 0px #000000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translate(-3px, -3px);
     transition: all 0.1s ease;
 }
 
-/* Hover state: Makes the button pop out slightly more */
+/* Hover state: Golden glow effect */
 .addToCartBtn:hover {
-    background-color: #ffe675;
-    /* Slightly brighter yellow */
-    box-shadow: 4px 4px 0px #000000;
+    background: linear-gradient(135deg, #e6b844 0%, #f0c855 50%, #e6b844 100%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     transform: translate(-4px, -4px);
 }
 
-/* Active state: The "Physical Click" animation */
+/* Active state: The satisfying click effect */
 .addToCartBtn:active {
-    /* Sinks the button down into its shadow when pressed */
-    box-shadow: 0px 0px 0px #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translate(0px, 0px);
 }
 
-/* Clean focus state for accessibility */
 .addToCartBtn:focus-visible {
-    outline: 2px dashed #000000;
+    outline: 2px dashed #8b5a00;
     outline-offset: 3px;
 }
 
@@ -163,34 +187,31 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 
-    /* Padding for snug fit around text */
     padding: 8px 12px;
     margin-top: auto;
     align-self: center;
 
-    /* Neo-Brutalist Colors & Borders */
-    background-color: #ff6b6b;
+    background: linear-gradient(135deg, #c95a3a 0%, #d97a5a 100%);
     color: #ffffff;
-    border: 3px solid #000000;
+    border: 2px solid #5a2a20;
     border-radius: 4px;
     cursor: pointer;
 
-    /* Creates the 3D blocky layer effect baseline */
-    box-shadow: 3px 3px 0px #000000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translate(-3px, -3px);
     transition: all 0.1s ease;
 }
 
-/* Hover state: Makes the button pop out slightly more */
+/* Hover state: Warmer red accent */
 .removeBtn:hover {
-    background-color: #ff5252;
-    box-shadow: 4px 4px 0px #000000;
+    background: linear-gradient(135deg, #d97a5a 0%, #e89a7a 100%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     transform: translate(-4px, -4px);
 }
 
-/* Active state: The "Physical Click" animation */
+/* Active state: Click feedback */
 .removeBtn:active {
-    box-shadow: 0px 0px 0px #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translate(0px, 0px);
 }
 
@@ -202,4 +223,32 @@
 
 label {
     margin: 0 0 8px 0;
+    color: #2a1810;
+    font-weight: 600;
+}
+
+/* Totals styling */
+h1 {
+    color: #ffd89b;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6),
+                 0 0 20px rgba(212, 140, 55, 0.3);
+    text-align: center;
+    margin: 20px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    max-width: 20%;
+    color: #ffd89b;
+    font-size: 28px;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6),
+                 0 0 20px rgba(212, 140, 55, 0.3);
+    text-align: center;
+    margin: 12px auto 12px auto;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(212, 140, 55, 0.15) 0%, rgba(212, 140, 55, 0.08) 100%);
+    border: 2px solid #d4a035;
+    border-radius: 6px;
 }

@@ -1,8 +1,5 @@
 focus:
 
-    - cart icon updates with quantity of items in cart
-
-    - should be able to adjust quantity on cart page and remove items completely
 
 
 
